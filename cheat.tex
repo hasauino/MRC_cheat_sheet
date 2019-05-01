@@ -1,0 +1,256 @@
+\documentclass[12pt]{article}
+\usepackage{multicol}
+\usepackage[left=1cm, right=1cm, top=1cm, a3paper]{geometry}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\newtcolorbox{latexBox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{theoryBox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{commandBox}{colback=white!5!white,colframe=black!5!white}
+\usepackage{listings}
+\begin{document}
+\begin{multicols}{3}
+
+\begin{latexBox}
+{Matricies}
+\begin{minipage}{5cm}
+\begin{commandBox}
+	\begin{verbatim}
+	$
+	\begin{bmatrix}
+	x  & x\\
+	x  & x\\
+	\end{bmatrix}
+	$
+	\end{verbatim}
+\end{commandBox}
+\end{minipage}
+ $\rightarrow
+\begin{bmatrix}
+x  & x\\
+x  & x\\
+\end{bmatrix}
+$ \\
+
+
+\begin{minipage}{5cm}
+	\begin{commandBox}
+		\begin{verbatim}
+		$
+		\begin{pmatrix}
+		x  & x\\
+		x  & x\\
+		\end{pmatrix}
+		$
+		\end{verbatim}
+	\end{commandBox}
+\end{minipage}
+$\rightarrow
+\begin{pmatrix}
+x  & x\\
+x  & x\\
+\end{pmatrix}
+$ \\
+
+\begin{minipage}{5cm}
+	\begin{commandBox}
+		\begin{verbatim}
+		$
+		\begin{matrix}
+		x  & x\\
+		x  & x\\
+		\end{matrix}
+		$
+		\end{verbatim}
+	\end{commandBox}
+\end{minipage}
+$\rightarrow
+\begin{matrix}
+x  & x\\
+x  & x\\
+\end{matrix}
+$ \\
+
+\begin{minipage}{5cm}
+	\begin{commandBox}
+		\begin{verbatim}
+			$\dots \\
+			\vdots \\ 
+			\ddots$
+		\end{verbatim}
+	\end{commandBox}
+\end{minipage}
+$\rightarrow$
+\begin{minipage}{1cm}
+$\dots \\
+\vdots \\ 
+\ddots$
+\end{minipage}
+\end{latexBox}
+
+
+
+
+
+
+
+
+\begin{latexBox}
+	{Subscript and Superscript}
+	\begin{minipage}{5cm}
+		\begin{commandBox}
+			\begin{verbatim}
+	$
+	x_a \\
+	x^T \\
+	{}^{A}_{B}T \\
+	{}^{D}P
+	$ 
+			\end{verbatim}
+		\end{commandBox}
+	\end{minipage}
+		\begin{minipage}{1cm}
+	$
+	x_a \\
+	x^T \\
+	{}^{A}_{B}T \\
+	{}^{D}P
+	$ 
+		\end{minipage}
+\end{latexBox}
+
+
+\begin{latexBox}
+	{Equations}
+	\begin{minipage}{5cm}
+		\begin{commandBox}
+			\begin{verbatim}
+				$$
+				\begin{align}
+				a & = b \\
+				b & = c
+				\end{align}
+				$$
+			\end{verbatim}
+		\end{commandBox}
+	\end{minipage}
+	\begin{minipage}{1cm}
+		
+		\begin{align*}
+		a & = b \\
+		b & = c
+		\end{align*}
+	\end{minipage}
+	
+	
+	
+	\begin{minipage}{5cm}
+		\begin{commandBox}
+			\begin{verbatim}
+$$
+\begin{equation}
+E = F \cdot s 
+\end{equation}
+$$
+			\end{verbatim}
+		\end{commandBox}
+	\end{minipage}
+	\begin{minipage}{1cm}
+		
+\begin{equation}
+E = F \cdot s 
+\end{equation}
+	\end{minipage}\\
+(in line) \verb|$ [expression] $| \\
+(display) \verb|$$ [expression] $$| \\
+\end{latexBox}
+
+
+
+
+
+
+
+
+
+
+\begin{theoryBox}
+{x y z Rotations}
+$$
+R_x(\gamma) = \begin{bmatrix}
+1	&	0	&	0	\\
+0	&	c\gamma	&	-s\gamma	\\
+0	&	s\gamma	&	c\gamma	\\
+\end{bmatrix}
+$$
+$$
+R_y(\beta) = \begin{bmatrix}
+c\beta	&	0	&	s\beta	\\
+0	&	1	&	0	\\
+-s\beta	&	0	&	c\beta	\\
+\end{bmatrix}
+$$
+$$
+R_z(\alpha) = \begin{bmatrix}
+c\alpha	&	-s\alpha	&	0	\\
+s\alpha	&	c\alpha	&	0	\\
+0	&	0	&	1	\\
+\end{bmatrix}
+$$
+\end{theoryBox}
+
+
+\begin{theoryBox}
+	{Norms}
+	$$
+	\vert\vert x \vert\vert_p  =\left (\sum_{i}^{} \vert x_i \vert^p \right)^{1 \over p}
+	$$
+\end{theoryBox}
+
+\begin{theoryBox}
+	{Norm of Matrix}
+	$$
+	\vert\vert A \vert\vert_p = \max_{x \ne 0} \left( {{\vert\vert Ax \vert\vert_p} \over {\vert\vert x \vert\vert_p}} \right)
+	$$
+\end{theoryBox}
+
+
+
+
+\begin{theoryBox}
+	{Condition Number}
+$$
+\vert\vert A^{-1} \vert\vert ~ \vert\vert A \vert\vert = cond(A)
+$$
+\end{theoryBox}
+
+\begin{theoryBox}
+	{SVD}
+	$$
+	A = U~ \Sigma~ V^T
+	$$
+\end{theoryBox}
+
+\begin{theoryBox}
+	{Polar Decomposition}
+	\begin{align*}
+		A &= U~ V^T~ V \Sigma~ V^T \\
+		W &= U~ V^T \\
+		P &= V~ \Sigma V^T \\
+	\end{align*}
+\end{theoryBox}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{multicols}
+\end{document}
